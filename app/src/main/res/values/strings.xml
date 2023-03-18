@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SOS</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="add_emergency_contact">Add Emergency Contact</string>
+    <string name="add_police_contact">Add Police Contact</string>
+    <string name="add_hospital_contact">Add Hospital Contact</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_Police_contact" />
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="view_contacts">View Contacts</string>
+</resources>
