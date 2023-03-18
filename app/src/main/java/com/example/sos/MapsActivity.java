@@ -202,11 +202,10 @@ public class MapsActivity extends AppCompatActivity {
         ImageView Imageview=new ImageView(this);
         Imageview.setBackgroundResource(img);
         flipper.addView(Imageview);
-        flipper.setFlipInterval(3000);
+        flipper.setFlipInterval(2000);
         flipper.setAutoStart(true);
         flipper.setInAnimation(this, android.R.anim.slide_out_right);
         flipper.setOutAnimation(this, android.R.anim.slide_in_left);
-
 
     }
     /////////////////////////////////
