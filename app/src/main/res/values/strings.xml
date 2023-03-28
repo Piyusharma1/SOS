@@ -12,4 +12,7 @@
     <string name="name">Name</string>
     <string name="phone">Phone</string>
     <string name="view_contacts">View Contacts</string>
+    <string name="email">Email</string>
+    <string name="_email">email</string>
+    <string name="login_as_police">Login as Police</string>
 </resources>

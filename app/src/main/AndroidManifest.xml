@@ -27,9 +27,23 @@ This permission is necessary for devices
         android:supportsRtl="true"
         android:theme="@style/Theme.SOS">
         <activity
-            android:name=".showcontact"
-            android:exported="false" />
-        <!-- register the receiver -->
+            android:name=".Show_contact"
+            android:exported="true" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" /> <!-- register the receiver -->
         <receiver
             android:name=".ReactivateService"
             android:enabled="true"
@@ -41,13 +55,7 @@ This permission is necessary for devices
 
         <activity
             android:name=".MapsActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

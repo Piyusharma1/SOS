@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -37,6 +38,7 @@ import com.example.sos.CustomAdapter;
 import com.example.sos.DbHelper;
 import com.example.sos.ReactivateService;
 import com.example.sos.SensorService;
+import com.google.android.material.button.MaterialButton;
 
 import java.util.List;
 
@@ -56,16 +58,23 @@ import android.widget.ViewFlipper;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class MapsActivity extends AppCompatActivity {
+
+
+
+    public void onBackPressed(){
+       Intent a = new Intent(Intent.ACTION_MAIN);
+       a.addCategory(Intent.CATEGORY_HOME);
+       a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
+    }
 
 
     private static final int IGNORE_BATTERY_OPTIMIZATION_REQUEST = 1002;
     private static final int PICK_CONTACT = 1;
 
     // create instances of various classes to be used
-    Button button1, button2, button3,button4;
+    Button button1, button2, button3,button4,btn_login;
 
     ViewFlipper flipper;
     ListView listView;
@@ -77,19 +86,22 @@ public class MapsActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //button used to new window
         button4 = findViewById(R.id.button4);
         button4.setOnClickListener(view -> {
             Intent secondActivityIntent = new Intent(
-                    getApplicationContext(), showcontact.class
+                    getApplicationContext(), Show_contact.class
             );
             startActivity(secondActivityIntent);
         });
+        /////////////////////////
 
         int imgarry[]={R.drawable.a1,R.drawable.a2,R.drawable.a3};
         flipper=(ViewFlipper)findViewById(R.id.flipper);
@@ -98,6 +110,10 @@ public class MapsActivity extends AppCompatActivity {
         {
             showimage(imgarry[i]);
         }
+
+        /////////////////////////////////
+
+
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -202,9 +218,10 @@ public class MapsActivity extends AppCompatActivity {
         ImageView Imageview=new ImageView(this);
         Imageview.setBackgroundResource(img);
         flipper.addView(Imageview);
-        flipper.setFlipInterval(2000);
+        flipper.setFlipInterval(3000);
         flipper.setAutoStart(true);
-        flipper.setInAnimation(this, android.R.anim.slide_out_right);
+        flipper.startFlipping();
+        flipper.setInAnimation(this, android.R.anim.slide_in_left);
         flipper.setOutAnimation(this, android.R.anim.slide_in_left);
 
     }
@@ -294,6 +311,10 @@ public class MapsActivity extends AppCompatActivity {
 
 
 }
+
+
+
+
 
 
 
