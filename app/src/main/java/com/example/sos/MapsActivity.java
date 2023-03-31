@@ -74,7 +74,7 @@ public class MapsActivity extends AppCompatActivity {
     private static final int PICK_CONTACT = 1;
 
     // create instances of various classes to be used
-    Button button1, button2, button3,button4,btn_login;
+    Button button1, button2, button3,button4,bth;
 
     ViewFlipper flipper;
     ListView listView;
@@ -221,8 +221,9 @@ public class MapsActivity extends AppCompatActivity {
         flipper.setFlipInterval(3000);
         flipper.setAutoStart(true);
         flipper.startFlipping();
+
         flipper.setInAnimation(this, android.R.anim.slide_in_left);
-        flipper.setOutAnimation(this, android.R.anim.slide_in_left);
+        flipper.setOutAnimation(this, android.R.anim.slide_out_right);
 
     }
     /////////////////////////////////
