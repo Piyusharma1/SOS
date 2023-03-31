@@ -28,8 +28,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 // This method will be executed once the timer is over
-////////////
-                /////////////////////
+
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 if (user != null) {
                     Intent i = new Intent(SplashActivity.this, MapsActivity.class);

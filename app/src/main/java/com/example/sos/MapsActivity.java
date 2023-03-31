@@ -74,7 +74,7 @@ public class MapsActivity extends AppCompatActivity {
     private static final int PICK_CONTACT = 1;
 
     // create instances of various classes to be used
-    Button button1, button2, button3,button4,bth;
+    Button button1, button2, button3,button4,bth,btn_about;
 
     ViewFlipper flipper;
     ListView listView;
@@ -91,6 +91,14 @@ public class MapsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final Button btn_about = (Button) findViewById(R.id.btn_about);
+        btn_about.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MapsActivity.this,About.class);
+                startActivity(intent);
+            }
+        });
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //button used to new window
