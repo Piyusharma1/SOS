@@ -7,33 +7,23 @@
     android:background="@color/bg"
     >
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/org_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints">
 
-    </RelativeLayout>
+
+
+
 
     <TextView
-        android:id="@+id/appname"
-        style="bold"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
+        android:layout_height="match_parent"
+        android:textAlignment="center"
         android:text="ACCIGUARD"
+        android:textSize="30dp"
         android:textColor="@color/main"
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="784dp" />
+        android:textStyle="bold"
+        android:gravity="center"
+
+        />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
