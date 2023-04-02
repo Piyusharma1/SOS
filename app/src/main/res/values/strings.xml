@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SOS</string>
+    <string name="app_name">ACCIGUARD</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="add_emergency_contact">Add Emergency Contact</string>
     <string name="add_police_contact">Add Police Contact</string>
@@ -24,4 +24,9 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_navi">navi</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="about">The ACCIGUARD applications are basically advanced emergency apps that can rescue you and/or your loved ones if you and/or they find themselves in a life-threatening emergency situation and need immediate assistance. When you need some personal assistance, you can actually turn on your phone and can call or message someone for help. But in a life-threatening emergency when accident happen we don’t have time to open our phone, instead, we need some accessibility methods by which we can reach out for help without actually operating the phone.Can you think of some easiest ways of stimulating some functions in your phone, without actually turning ON your phone’s screen? One such way is by shaking your phone. We will be creating a service, and in that service, we would listen for a Shake Event by the phone. When we register a shake event i.e., when the user shakes the phone, we would send the user’s location with a predefined message to all the contacts which the user has previously added to the app.</string>
 </resources>

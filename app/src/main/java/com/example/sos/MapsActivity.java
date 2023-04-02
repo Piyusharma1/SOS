@@ -1,62 +1,35 @@
 package com.example.sos;
 
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Bundle;
 import android.os.PowerManager;
 import android.provider.ContactsContract;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
-
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
-import android.os.Bundle;
-
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-
-import com.example.sos.ContactModel;
-import com.example.sos.CustomAdapter;
-import com.example.sos.DbHelper;
-import com.example.sos.ReactivateService;
-import com.example.sos.SensorService;
-import com.google.android.material.button.MaterialButton;
-
 import java.util.List;
-
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.CompositePageTransformer;
-import androidx.viewpager2.widget.MarginPageTransformer;
-import androidx.viewpager2.widget.ViewPager2;
-
-import android.os.Bundle;
-import android.os.Handler;
-import android.view.View;
 import android.widget.ViewFlipper;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 
 public class MapsActivity extends AppCompatActivity {
 
@@ -91,25 +64,37 @@ public class MapsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ////////////////
 
-        final Button btn_about = (Button) findViewById(R.id.btn_about);
-        btn_about.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(MapsActivity.this,About.class);
-                startActivity(intent);
+        /////////////////
+
+       /////////////////////
+        // Initialize and assign variable
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+
+        // Set Home selected
+        bottomNavigationView.setSelectedItemId(R.id.home);
+
+        // Perform item selected listener
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+
+            switch(item.getItemId())
+            {
+                case R.id.dashboard:
+                    startActivity(new Intent(getApplicationContext(),dashboard.class));
+                    overridePendingTransition(0,0);
+                    return true;
+                case R.id.home:
+                    return true;
+                case R.id.about:
+                    startActivity(new Intent(getApplicationContext(),about1.class));
+                    overridePendingTransition(0,0);
+                    return true;
             }
+            return false;
         });
-
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //button used to new window
-        button4 = findViewById(R.id.button4);
-        button4.setOnClickListener(view -> {
-            Intent secondActivityIntent = new Intent(
-                    getApplicationContext(), Show_contact.class
-            );
-            startActivity(secondActivityIntent);
-        });
-        /////////////////////////
+
 
         int imgarry[]={R.drawable.a1,R.drawable.a2,R.drawable.a3};
         flipper=(ViewFlipper)findViewById(R.id.flipper);
@@ -118,6 +103,7 @@ public class MapsActivity extends AppCompatActivity {
         {
             showimage(imgarry[i]);
         }
+
 
         /////////////////////////////////
 
@@ -314,8 +300,6 @@ public class MapsActivity extends AppCompatActivity {
         }
 
     }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 
 

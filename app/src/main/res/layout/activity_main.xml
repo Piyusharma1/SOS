@@ -49,25 +49,33 @@
         app:icon="@drawable/baseline_local_hospital_24" />
 
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/view_contacts"
-        android:layout_margin="20dp" />
 
-    <Button
-        android:id="@+id/btn_about"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="About"
-        android:layout_margin="20dp" />
 
     <ListView
         android:id="@+id/ListView"
         android:layout_width="0dp"
         android:layout_height="0dp" />
 
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:itemBackground="@color/ic_channel_background"
+            app:itemIconTint="@drawable/selector"
+            app:itemTextColor="@drawable/selector"
+            app:menu="@menu/menu_navigation" />
+
+    </RelativeLayout>
 
 
 
