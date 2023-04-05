@@ -29,6 +29,15 @@ public class RegisterActivity extends AppCompatActivity {
         pass_word=findViewById(R.id.password1);
         btn2_signup=findViewById(R.id.sign);
         mAuth=FirebaseAuth.getInstance();
+
+        final Button btl = (Button) findViewById(R.id.btl);
+        btl.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
         btn2_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

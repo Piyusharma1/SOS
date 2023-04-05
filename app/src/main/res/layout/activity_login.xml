@@ -5,70 +5,91 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg"
+    android:focusable="auto"
     tools:context=".LoginActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="700dp"
-        android:layout_margin="10dp"
-        android:orientation="vertical"
-       android:layout_gravity="center"
-        android:background="@drawable/rounded_corner"
-        tools:ignore="UselessParent">
+        android:layout_height="match_parent"
+        android:layout_margin="30dp"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/reg"
             android:layout_width="match_parent"
-            android:layout_height="700dp"
-            android:layout_margin="10dp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="LOG IN"
+            android:textColor="@color/main"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
-            <ImageView
-                android:layout_marginTop="100dp"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/round"
-                android:layout_gravity="center"
-                />
 
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="4pt"
-            android:layout_marginTop="10pt"
-            android:layout_marginRight="4pt"
-            android:hint="@string/_email" />
+            android:layout_height="50dp"
+            android:layout_below="@+id/reg"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ed_glow"
+            android:hint="@string/_email"
+            android:paddingLeft="15dp"
+            android:textColorHint="@color/main" />
 
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="4pt"
-            android:layout_marginTop="10pt"
-            android:layout_marginRight="4pt"
-            android:hint="Password" />
+            android:layout_height="50dp"
+            android:layout_below="@id/email"
+            android:layout_marginTop="20dp"
+
+            android:background="@drawable/ed_glow"
+            android:hint="Password"
+            android:paddingLeft="15dp"
+            android:textColorHint="@color/main" />
 
 
 
-        <Button
+
+        <com.google.android.material.button.MaterialButton
+
             android:id="@+id/btn_login"
+            android:layout_below="@id/password"
+            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="4pt"
-            android:layout_marginTop="10pt"
-            android:layout_marginRight="4pt"
-            android:text="LOG IN" />
+            android:layout_height="55dp"
+
+            android:text="LOG IN"
+            android:textColor="@color/white"
+            app:cornerRadius="20dp" />
 
         <Button
             android:id="@+id/btn_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="4pt"
-            android:layout_marginTop="10pt"
-            android:layout_marginRight="4pt"
-            android:text="SIGN UP" />
+            android:layout_below="@+id/btn_login"
+            android:layout_marginTop="20dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="Create New Account"
+            android:textAlignment="center"
+            android:textColor="@color/main"
+            android:textColorHint="@color/white"
+            android:textSize="13dp"
+            android:textStyle="bold" />
 
-        </LinearLayout>
-    </LinearLayout>
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_signup"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="Forgot Password"
+            android:textAlignment="center"
+            android:textColor="@color/main"
+            android:textColorHint="@color/white"
+            android:textSize="13dp"
+            android:textStyle="bold" />
 
+
+    </RelativeLayout>
 </LinearLayout>

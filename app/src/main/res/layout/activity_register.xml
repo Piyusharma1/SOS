@@ -4,60 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/bg"
-    android:gravity="center"
+    android:focusable="auto"
     tools:context=".RegisterActivity">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="700dp"
-        android:layout_margin="10dp"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:background="@drawable/rounded_corner"
-        tools:ignore="UselessParent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="700dp"
-            android:layout_margin="10dp"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_marginTop="100dp"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/round"
-                android:layout_gravity="center"
-                />
-
-    <EditText
-        android:id="@+id/username"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="4pt"
-        android:layout_marginLeft="4pt"
-        android:layout_marginTop="10pt"
-        android:hint="Username"/>
-    <EditText
-        android:id="@+id/password1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10pt"
-        android:layout_marginLeft="4pt"
-        android:layout_marginRight="4pt"
-        android:hint="Password"/>
-    <Button
-        android:id="@+id/sign"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="4pt"
-        android:layout_marginLeft="4pt"
-        android:layout_marginTop="10pt"
-        android:text="SIGN UP"/>
+        android:layout_height="match_parent"
+        android:layout_margin="30dp"
+        android:orientation="vertical">
 
-        </LinearLayout>
+        <Button
+            android:id="@+id/btl"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/baseline_arrow_back_24"
+            android:textColor="@color/white"
+
+            />
+
+
+
+
+            <TextView
+                android:layout_below="@id/btl"
+                android:id="@+id/reg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Registration"
+                android:textColor="@color/main"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+
+
+            <EditText
+
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/reg"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ed_glow"
+                android:hint="@string/_email"
+                android:paddingLeft="15dp"
+                android:textColorHint="@color/main" />
+
+            <EditText
+                android:id="@+id/password1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/username"
+                android:layout_marginTop="20dp"
+
+                android:background="@drawable/ed_glow"
+                android:hint="Password"
+                android:paddingLeft="15dp"
+                android:textColorHint="@color/main" />
+
+                <Button
+            android:id="@+id/sign"
+                    android:layout_below="@+id/password1"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+
+
+                    app:cornerRadius="20dp"
+            android:text="SIGN UP"/>
+
+    </RelativeLayout>
     </LinearLayout>
-</LinearLayout>

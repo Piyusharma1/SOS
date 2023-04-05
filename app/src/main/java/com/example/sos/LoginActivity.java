@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends AppCompatActivity {
     private EditText user_name, pass_word;
     FirebaseAuth mAuth;
+    Button btn_reset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,13 @@ public class LoginActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
 
 
+        final Button btn_reset = (Button) findViewById(R.id.btn_reset);
+        btn_reset.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,ForgotPassword.class);
+                startActivity(intent);
+            }
+        });
 
         final SharedPreferences SharedPreferences=getSharedPreferences("Data",MODE_PRIVATE);
         final String type=SharedPreferences.getString("Email","");
@@ -97,6 +105,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         btn_sign.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this,RegisterActivity.class )));
+
     }
 
 }

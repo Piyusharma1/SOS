@@ -15,37 +15,46 @@
         android:layout_margin="10dp"
         android:backgroundTint="#0E0B0B" />
 
-    <Button
-        android:id="@+id/Button1"
+    <com.google.android.material.button.MaterialButton
 
+        android:id="@+id/Button1"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+
+        app:cornerRadius="20dp"
         android:text="@string/add_emergency_contact"
         android:textColor="#FFFFFF"
         app:icon="@drawable/baseline_family_restroom_24" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/Button2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
 
+        app:cornerRadius="20dp"
         android:text="@string/add_police_contact"
+
         android:textColor="#FFFFFF"
         app:icon="@drawable/baseline_local_police_24" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/Button3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="20dp"
-
-        android:text="@string/add_hospital_contact"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"        android:text="@string/add_hospital_contact"
         android:textColor="#FFFFFF"
+        app:cornerRadius="20dp"
         app:icon="@drawable/baseline_local_hospital_24" />
 
 

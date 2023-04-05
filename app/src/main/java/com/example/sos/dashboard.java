@@ -21,7 +21,7 @@ public class dashboard extends AppCompatActivity {
     DbHelper db;
     List<ContactModel> list;
     CustomAdapter customAdapter;
-    Button bth;
+    Button bth,btn_reset;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +40,8 @@ public class dashboard extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
