@@ -2,11 +2,21 @@ package com.example.sos;
 
 import static android.app.ProgressDialog.show;
 
-import androidx.appcompat.app.AppCompatActivity;
 
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.PowerManager;
+import android.provider.Settings;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +29,8 @@ public class LoginActivity extends AppCompatActivity {
     private EditText user_name, pass_word;
     FirebaseAuth mAuth;
     Button btn_reset;
+    private static final int IGNORE_BATTERY_OPTIMIZATION_REQUEST = 1002;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +44,35 @@ public class LoginActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
 
 
+
+
+        // check for runtime permissions
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_DENIED) {
+                requestPermissions(new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.SEND_SMS, android.Manifest.permission.READ_CONTACTS}, 100);
+            }
+        }
+
+        // this is a special permission required only by devices using
+        // Android Q and above. The Access Background Permission is responsible
+        // for populating the dialog with "ALLOW ALL THE TIME" option
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            requestPermissions(new String[]{Manifest.permission.ACCESS_BACKGROUND_LOCATION}, 100);
+        }
+
+        // check for BatteryOptimization,
+        PowerManager pm = (PowerManager) getSystemService(POWER_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (pm != null && !pm.isIgnoringBatteryOptimizations(getPackageName())) {
+                askIgnoreOptimization();
+            }
+        }
+
+
+
         final Button btn_reset = (Button) findViewById(R.id.btn_reset);
+
+
         btn_reset.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this,ForgotPassword.class);
@@ -105,6 +145,15 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         btn_sign.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this,RegisterActivity.class )));
+
+    }
+    private void askIgnoreOptimization() {
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            @SuppressLint("BatteryLife") Intent intent = new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
+            intent.setData(Uri.parse("package:" + getPackageName()));
+            startActivityForResult(intent, IGNORE_BATTERY_OPTIMIZATION_REQUEST);
+        }
 
     }
 

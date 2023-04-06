@@ -42,7 +42,7 @@
             android:layout_height="50dp"
             android:layout_below="@id/email"
             android:layout_marginTop="20dp"
-
+            android:inputType="textPassword"
             android:background="@drawable/ed_glow"
             android:hint="Password"
             android:paddingLeft="15dp"

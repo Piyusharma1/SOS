@@ -43,7 +43,6 @@ public class MapsActivity extends AppCompatActivity {
     }
 
 
-    private static final int IGNORE_BATTERY_OPTIMIZATION_REQUEST = 1002;
     private static final int PICK_CONTACT = 1;
 
     // create instances of various classes to be used
@@ -110,28 +109,6 @@ public class MapsActivity extends AppCompatActivity {
 
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        // check for runtime permissions
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_DENIED) {
-                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.SEND_SMS, Manifest.permission.READ_CONTACTS}, 100);
-            }
-        }
-
-        // this is a special permission required only by devices using
-        // Android Q and above. The Access Background Permission is responsible
-        // for populating the dialog with "ALLOW ALL THE TIME" option
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            requestPermissions(new String[]{Manifest.permission.ACCESS_BACKGROUND_LOCATION}, 100);
-        }
-
-        // check for BatteryOptimization,
-        PowerManager pm = (PowerManager) getSystemService(POWER_SERVICE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (pm != null && !pm.isIgnoringBatteryOptimizations(getPackageName())) {
-                askIgnoreOptimization();
-            }
-        }
 
         // start the service
         SensorService sensorService = new SensorService();
@@ -291,15 +268,7 @@ public class MapsActivity extends AppCompatActivity {
 
     // this method prompts the user to remove any
     // battery optimisation constraints from the App
-    private void askIgnoreOptimization() {
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-            @SuppressLint("BatteryLife") Intent intent = new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
-            intent.setData(Uri.parse("package:" + getPackageName()));
-            startActivityForResult(intent, IGNORE_BATTERY_OPTIMIZATION_REQUEST);
-        }
-
-    }
 
 
 
