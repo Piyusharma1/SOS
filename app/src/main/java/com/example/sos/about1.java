@@ -42,6 +42,10 @@ public class about1 extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),MapsActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.Profile:
+                        startActivity(new Intent(getApplicationContext(),profile.class));
+                        overridePendingTransition(0,0);
+                        return true;
                 }
                 return false;
             }

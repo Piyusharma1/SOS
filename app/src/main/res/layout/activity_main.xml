@@ -8,12 +8,30 @@
     android:orientation="vertical"
     tools:context=".MapsActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:text="ACCIGUARD"
+        android:textSize="30dp"
+        android:textColor="@color/main"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+
+        />
+
+
+
     <ViewFlipper
         android:id="@+id/flipper"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_margin="10dp"
-        android:backgroundTint="#0E0B0B" />
+
+      />
+
+
 
     <com.google.android.material.button.MaterialButton
 
@@ -83,6 +101,8 @@
             app:itemIconTint="@drawable/selector"
             app:itemTextColor="@drawable/selector"
             app:menu="@menu/menu_navigation" />
+
+
 
     </RelativeLayout>
 

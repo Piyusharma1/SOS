@@ -9,11 +9,14 @@
     tools:context=".MapsActivity">
 
 
+
+
         <Button
             android:id="@+id/bth"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_margin="12dp"
+            android:layout_below="@+id/lg"
 
             android:background="@drawable/baseline_arrow_back_24"
             android:textColor="@color/white"
@@ -23,6 +26,7 @@
 
         <TextView
             android:id="@+id/con"
+
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="Contacts"

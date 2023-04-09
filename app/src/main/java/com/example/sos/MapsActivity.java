@@ -3,8 +3,8 @@ package com.example.sos;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -12,19 +12,16 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.Build;
-import android.os.PowerManager;
 import android.provider.ContactsContract;
-import android.provider.Settings;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
+
 import java.util.List;
 import android.widget.ViewFlipper;
 
@@ -46,13 +43,14 @@ public class MapsActivity extends AppCompatActivity {
     private static final int PICK_CONTACT = 1;
 
     // create instances of various classes to be used
-    Button button1, button2, button3,button4,bth,btn_about;
+    Button button1, button2, button3,button4,bth,btn_about,previous, next;
 
     ViewFlipper flipper;
     ListView listView;
     DbHelper db;
     List<ContactModel> list;
     CustomAdapter customAdapter;
+
 
 
 
@@ -87,6 +85,10 @@ public class MapsActivity extends AppCompatActivity {
                     return true;
                 case R.id.about:
                     startActivity(new Intent(getApplicationContext(),about1.class));
+                    overridePendingTransition(0,0);
+                    return true;
+                case R.id.Profile:
+                    startActivity(new Intent(getApplicationContext(),profile.class));
                     overridePendingTransition(0,0);
                     return true;
             }
@@ -197,6 +199,8 @@ public class MapsActivity extends AppCompatActivity {
         flipper.setOutAnimation(this, android.R.anim.slide_out_right);
 
     }
+
+
     /////////////////////////////////
 
     // method to check if the service is running
@@ -266,8 +270,7 @@ public class MapsActivity extends AppCompatActivity {
         }
     }
 
-    // this method prompts the user to remove any
-    // battery optimisation constraints from the App
+
 
 
 

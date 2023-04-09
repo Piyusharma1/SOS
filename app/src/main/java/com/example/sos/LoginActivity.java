@@ -9,6 +9,7 @@ import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -28,7 +29,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends AppCompatActivity {
     private EditText user_name, pass_word;
     FirebaseAuth mAuth;
-    Button btn_reset;
+    Button btn_reset,logout;
     private static final int IGNORE_BATTERY_OPTIMIZATION_REQUEST = 1002;
 
 
@@ -42,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         Button btn_login = findViewById(R.id.btn_login);
         Button btn_sign = findViewById(R.id.btn_signup);
         mAuth=FirebaseAuth.getInstance();
+
 
 
 
@@ -82,6 +84,8 @@ public class LoginActivity extends AppCompatActivity {
 
         final SharedPreferences SharedPreferences=getSharedPreferences("Data",MODE_PRIVATE);
         final String type=SharedPreferences.getString("Email","");
+
+
 
         if(type.isEmpty()){
 
@@ -144,7 +148,8 @@ public class LoginActivity extends AppCompatActivity {
             });
         });
 
-        btn_sign.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this,RegisterActivity.class )));
+
+
 
     }
     private void askIgnoreOptimization() {
@@ -154,6 +159,7 @@ public class LoginActivity extends AppCompatActivity {
             intent.setData(Uri.parse("package:" + getPackageName()));
             startActivityForResult(intent, IGNORE_BATTERY_OPTIMIZATION_REQUEST);
         }
+
 
     }
 

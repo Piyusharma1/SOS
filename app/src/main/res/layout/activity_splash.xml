@@ -8,22 +8,18 @@
     >
 
 
-
-
-
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textAlignment="center"
-        android:text="ACCIGUARD"
-        android:textSize="30dp"
-        android:textColor="@color/main"
-        android:textStyle="bold"
         android:gravity="center"
+        android:text="ACCIGUARD"
+        android:textAlignment="center"
+        android:textColor="@color/main"
+        android:textSize="30dp"
+        android:textStyle="bold"
 
-        />
-
+        tools:layout_editor_absoluteX="-126dp"
+        tools:layout_editor_absoluteY="-57dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

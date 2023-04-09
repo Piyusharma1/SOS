@@ -66,6 +66,10 @@ public class dashboard extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),about1.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.Profile:
+                        startActivity(new Intent(getApplicationContext(),profile.class));
+                        overridePendingTransition(0,0);
+                        return true;
                 }
                 return false;
             }
