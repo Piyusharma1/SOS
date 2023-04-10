@@ -36,6 +36,7 @@
             android:layout_width="209dp"
             android:layout_height="264dp"
             android:layout_below="@+id/name"
+
             android:layout_centerHorizontal="true"
             android:layout_marginTop="55dp"
             android:background="@drawable/lss" />

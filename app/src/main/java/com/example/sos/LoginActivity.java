@@ -82,6 +82,16 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        final Button btn_signup = (Button) findViewById(R.id.btn_signup);
+
+
+        btn_signup.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
         final SharedPreferences SharedPreferences=getSharedPreferences("Data",MODE_PRIVATE);
         final String type=SharedPreferences.getString("Email","");
 
