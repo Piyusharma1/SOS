@@ -1,1 +1,1 @@
-Building an Android Application to automate the accident detection task and call the emergency services
+Accident Detection System is an Android Application, which detects the event of an accident using multiple smartphone sensors such as an accelerometer, GPS. If the event of an accident is confirmed then, this app will send an emergency alert with Location coordinates to the hospital, Police & Family.
