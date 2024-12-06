@@ -6,6 +6,6 @@ Accident Detection System is an Android Application, which detects the event of 
 
 ![IMG_20241206_232238](https://github.com/user-attachments/assets/174cd89f-6bd0-4775-ab85-76c7fd7412f8)
 
-![IMG_20241206_232445](https://github.com/user-attachments/assets/c71e9c72-4ddf-4fd3-9d4c-7bb9dc84846f)
-
 ![IMG_20241206_233649](https://github.com/user-attachments/assets/464b6ec7-2253-468d-a77e-fbdd28e5ea65)
+
+![IMG_20241206_232445](https://github.com/user-attachments/assets/c71e9c72-4ddf-4fd3-9d4c-7bb9dc84846f)
